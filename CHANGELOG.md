@@ -1,3 +1,67 @@
+## [2.0.0-beta.1](https://github.com/ionic-team/capacitor/compare/2.0.0-beta.0...2.0.0-beta.1) (2020-03-24)
+
+
+### Bug Fixes
+
+* fix(android): allow Share plugin to provide text or url only (#2436) ([b6328f0](https://github.com/ionic-team/capacitor/commit/b6328f0)), closes [#2436](https://github.com/ionic-team/capacitor/issues/2436)
+* fix(android): Avoid Accessibility.speak crash (#2554) ([77b59f8](https://github.com/ionic-team/capacitor/commit/77b59f8)), closes [#2554](https://github.com/ionic-team/capacitor/issues/2554)
+* fix(android): don't return NO_CAMERA_ERROR if any camera is present (#2558) ([4f6ca98](https://github.com/ionic-team/capacitor/commit/4f6ca98)), closes [#2558](https://github.com/ionic-team/capacitor/issues/2558)
+* fix(android): make camera work on Android 10 (#2559) ([4a1a7b8](https://github.com/ionic-team/capacitor/commit/4a1a7b8)), closes [#2559](https://github.com/ionic-team/capacitor/issues/2559)
+* fix(ios): make Clipboard.read return text/plain (#2565) ([078284d](https://github.com/ionic-team/capacitor/commit/078284d)), closes [#2565](https://github.com/ionic-team/capacitor/issues/2565)
+* fix(cli): prevent cordova dependency loop if plugin contains @ (#2622) ([9dcb2ff](https://github.com/ionic-team/capacitor/commit/9dcb2ff)), closes [#2622](https://github.com/ionic-team/capacitor/issues/2622)
+* fix(android): maintain status bar color during splash (#2603) ([59fcf9e](https://github.com/ionic-team/capacitor/commit/59fcf9e)), closes [#2603](https://github.com/ionic-team/capacitor/issues/2603)
+* fix(android): make sure scheduled time is shown in LocalNotifications (#2553) ([448e7b7](https://github.com/ionic-team/capacitor/commit/448e7b7)), closes [#2553](https://github.com/ionic-team/capacitor/issues/2553)
+* fix(android): support for multi-line text in LocalNotifications (#2552) ([59d02ab](https://github.com/ionic-team/capacitor/commit/59d02ab)), closes [#2552](https://github.com/ionic-team/capacitor/issues/2552)
+* fix(android): Use NotificationCompat constant for setting visibility (#2586) ([62b11fd](https://github.com/ionic-team/capacitor/commit/62b11fd)), closes [#2586](https://github.com/ionic-team/capacitor/issues/2586)
+* fix(cli): avoid error when config.xml has no preferences (#2627) ([6c0dc4b](https://github.com/ionic-team/capacitor/commit/6c0dc4b)), closes [#2627](https://github.com/ionic-team/capacitor/issues/2627)
+* fix(ios): Make Camera.getPhoto return exif from gallery photos (#2595) ([18f9d81](https://github.com/ionic-team/capacitor/commit/18f9d81)), closes [#2595](https://github.com/ionic-team/capacitor/issues/2595)
+* fix(ios): return error if Cancel is selected from Camera.getPhoto() prompt (#2550) ([a015f8f](https://github.com/ionic-team/capacitor/commit/a015f8f)), closes [#2550](https://github.com/ionic-team/capacitor/issues/2550)
+
+
+### Features
+
+* feat(camera): Unify saveToGallery default value to false (#2557) ([d222226](https://github.com/ionic-team/capacitor/commit/d222226)), closes [#2557](https://github.com/ionic-team/capacitor/issues/2557)
+* feat: implement removeAllListeners (#2609) ([ac55d63](https://github.com/ionic-team/capacitor/commit/ac55d63)), closes [#2609](https://github.com/ionic-team/capacitor/issues/2609)
+* feat(android): add configurable icon color for local notifications (#2548) ([0bfa0bf](https://github.com/ionic-team/capacitor/commit/0bfa0bf)), closes [#2548](https://github.com/ionic-team/capacitor/issues/2548)
+* feat(android): Add immersive configuration to Splash (#2425) ([2605ad6](https://github.com/ionic-team/capacitor/commit/2605ad6)), closes [#2425](https://github.com/ionic-team/capacitor/issues/2425)
+* feat(android): Add lights and lightColor to PushNotificationChannel (#2618) ([4c0170c](https://github.com/ionic-team/capacitor/commit/4c0170c)), closes [#2618](https://github.com/ionic-team/capacitor/issues/2618)
+* feat(android): Add Statusbar.setOverlaysWebView method (#2597) ([d035939](https://github.com/ionic-team/capacitor/commit/d035939)), closes [#2597](https://github.com/ionic-team/capacitor/issues/2597)
+* feat(android): avoid app restart on activity resize or uiMode change (#2584) ([4a29ff8](https://github.com/ionic-team/capacitor/commit/4a29ff8)), closes [#2584](https://github.com/ionic-team/capacitor/issues/2584)
+* feat(android): make JSObject.getString return null instead of 'null' string (#2602) ([52069b7](https://github.com/ionic-team/capacitor/commit/52069b7)), closes [#2602](https://github.com/ionic-team/capacitor/issues/2602)
+* feat(android): Make variables.gradle file not mandatory (#2600) ([4fc5039](https://github.com/ionic-team/capacitor/commit/4fc5039)), closes [#2600](https://github.com/ionic-team/capacitor/issues/2600)
+* feat(App): Add getState method to check current app state (#2611) ([f20bf29](https://github.com/ionic-team/capacitor/commit/f20bf29)), closes [#2611](https://github.com/ionic-team/capacitor/issues/2611)
+* feat(cli): make init use values from capacitor.config.json as defaults (#2620) ([9157e1f](https://github.com/ionic-team/capacitor/commit/9157e1f)), closes [#2620](https://github.com/ionic-team/capacitor/issues/2620)
+* feat(cli): use name from package.json as default name (#2621) ([e9bec42](https://github.com/ionic-team/capacitor/commit/e9bec42)), closes [#2621](https://github.com/ionic-team/capacitor/issues/2621)
+
+
+### Docs
+
+* updated local notification config docs (#2601) ([9997b3e](https://github.com/ionic-team/capacitor/commit/9997b3e)), closes [#2601](https://github.com/ionic-team/capacitor/issues/2601)
+* docs(clipboard): update read example removing options (#2564) ([49e9f8d](https://github.com/ionic-team/capacitor/commit/49e9f8d)), closes [#2564](https://github.com/ionic-team/capacitor/issues/2564)
+* docs(site): Add target blank to external links in site header (#2543) ([f6c2288](https://github.com/ionic-team/capacitor/commit/f6c2288)), closes [#2543](https://github.com/ionic-team/capacitor/issues/2543)
+* docs(Splash): document splashFullScreen and splashImmersive config options (#2613) ([c381202](https://github.com/ionic-team/capacitor/commit/c381202)), closes [#2613](https://github.com/ionic-team/capacitor/issues/2613)
+* docs(update guide): fix targetSdkVersion instructions (#2585) ([0b4ade8](https://github.com/ionic-team/capacitor/commit/0b4ade8)), closes [#2585](https://github.com/ionic-team/capacitor/issues/2585)
+* docs(contributing): Update docs contributing readme (#2592) ([0799d52](https://github.com/ionic-team/capacitor/commit/0799d52)), closes [#2592](https://github.com/ionic-team/capacitor/issues/2592)
+* docs(dependencies): update to latest Capacitor (#2599) ([0154f51](https://github.com/ionic-team/capacitor/commit/0154f51)), closes [#2599](https://github.com/ionic-team/capacitor/issues/2599)
+* docs(Device): fix getInfo response and add getBatteryInfo example (#2569) ([057512a](https://github.com/ionic-team/capacitor/commit/057512a)), closes [#2569](https://github.com/ionic-team/capacitor/issues/2569)
+* docs(firebase-guide): update guide with Capacitor 2.0 changes (#2598) ([4f0e749](https://github.com/ionic-team/capacitor/commit/4f0e749)), closes [#2598](https://github.com/ionic-team/capacitor/issues/2598)
+* docs(guides): Add new Deep Links guide (#2581) ([b9e25f3](https://github.com/ionic-team/capacitor/commit/b9e25f3)), closes [#2581](https://github.com/ionic-team/capacitor/issues/2581)
+* docs(ios): Add update guide for Capacitor 2.0 beta (#2571) ([ca0baf7](https://github.com/ionic-team/capacitor/commit/ca0baf7)), closes [#2571](https://github.com/ionic-team/capacitor/issues/2571)
+* docs(ios): Document hideLogs config option (#2619) ([23b2173](https://github.com/ionic-team/capacitor/commit/23b2173)), closes [#2619](https://github.com/ionic-team/capacitor/issues/2619)
+* docs(LocalNotifications): Update schedule sample (#2570) ([00d313f](https://github.com/ionic-team/capacitor/commit/00d313f)), closes [#2570](https://github.com/ionic-team/capacitor/issues/2570)
+* docs: update Filesystem.writeFile sample (#2568) ([5122527](https://github.com/ionic-team/capacitor/commit/5122527)), closes [#2568](https://github.com/ionic-team/capacitor/issues/2568)
+* docs(android): Add update guide for Capacitor 2.0 beta (#2572) ([0f0ed25](https://github.com/ionic-team/capacitor/commit/0f0ed25)), closes [#2572](https://github.com/ionic-team/capacitor/issues/2572)
+* docs(ce-plugins): Add SQLite, SQLite Storage and Video Player plugins (#2589) ([78a28da](https://github.com/ionic-team/capacitor/commit/78a28da)), closes [#2589](https://github.com/ionic-team/capacitor/issues/2589)
+
+
+### Chores
+
+* chore(android): Update to latest Gradle plugin and wrapper (#2573) ([221ce96](https://github.com/ionic-team/capacitor/commit/221ce96)), closes [#2573](https://github.com/ionic-team/capacitor/issues/2573)
+* chore(android): use AndroidX to build ([691a6b6](https://github.com/ionic-team/capacitor/commit/691a6b6))
+* chore(example): Fix Clipboard.read() (#2546) ([6b88ba8](https://github.com/ionic-team/capacitor/commit/6b88ba8)), closes [#2546](https://github.com/ionic-team/capacitor/issues/2546)
+
+
+
 ## [2.0.0-beta.0](https://github.com/ionic-team/capacitor/compare/1.5.0...2.0.0-beta.0) (2020-03-09)
 
 
