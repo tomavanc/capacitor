@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, Prop, Element, Listen, State } from '@stencil/core';
+import { Component, Prop, Element, Listen, State, h } from '@stencil/core';
 import { LocationSegments, RouterHistory } from '@stencil/router';
 import SiteProviderConsumer, { SiteState } from '../../global/site-provider-consumer';
 

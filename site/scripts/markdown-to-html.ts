@@ -6,7 +6,7 @@ import fs from 'fs';
 import url from 'url';
 import { rimraf, mkdirp } from '@stencil/utils';
 import { collectHeadingMetadata, changeCodeCreation, localizeMarkdownLink } from './markdown-renderer';
-import frontMatter from 'front-matter';
+import frontMatter, { FrontMatterResult } from 'front-matter';
 import fetch from 'node-fetch';
 import { SiteStructureItem, MarkdownContent } from '../src/global/definitions';
 
@@ -33,7 +33,7 @@ const SITE_STRUCTURE_FILE= './src/assets/docs-structure.json';
     if (filePath === './docs-md/README.md') {
       return Promise.resolve();
     }
-    let htmlContents = '';
+
     let markdownMetadata: MarkdownContent = {};
     const jsonFileName = path.relative(SOURCE_DIR, filePath);
     const destinationFileName = path.join(
@@ -46,7 +46,7 @@ const SITE_STRUCTURE_FILE= './src/assets/docs-structure.json';
     const markdownContents = await readFile(filePath, { encoding: 'utf8' });
 
     try {
-      let parsedMarkdown = frontMatter(markdownContents);
+      let parsedMarkdown: FrontMatterResult<string> = frontMatter(markdownContents);
       parsedMarkdown = await getGithubData(filePath, parsedMarkdown);
 
       const renderer = new marked.Renderer();
@@ -54,7 +54,7 @@ const SITE_STRUCTURE_FILE= './src/assets/docs-structure.json';
       collectHeadingMetadata(renderer, markdownMetadata);
       changeCodeCreation(renderer);
       localizeMarkdownLink(renderer, destinationFileName.replace('src',''), siteStructureJson);
-      htmlContents = marked(parsedMarkdown.body, {
+      const htmlContents = marked(parsedMarkdown.body, {
         renderer,
         headerIds: true
       });
@@ -65,7 +65,7 @@ const SITE_STRUCTURE_FILE= './src/assets/docs-structure.json';
       ));
 
       await writeFile(destinationFileName, JSON.stringify({
-        ...parsedMarkdown.attributes,
+        ...parsedMarkdown.attributes as {},
         ...markdownMetadata,
         srcPath: filePath,
         content: htmlContents

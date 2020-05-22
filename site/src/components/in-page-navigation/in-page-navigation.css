@@ -1,6 +1,6 @@
 in-page-navigation {
   flex: 0 0 180px;
-  height: 100%;
+  height: auto;
   padding-top: 26px;
   padding-left: 16px;
 }

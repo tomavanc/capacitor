@@ -1,4 +1,4 @@
-import { Component, Prop, Watch, ComponentInterface, State } from '@stencil/core';
+import { Component, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
 import siteStructure from '../../assets/docs-structure.json';
 import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
@@ -53,11 +53,13 @@ export class DocumentComponent implements ComponentInterface {
               <lower-content-nav next={this.nextItem} prev={this.prevItem}></lower-content-nav>
             </div>
           </div>,
-          <in-page-navigation
-            pageLinks={docsContent.headings}
-            srcUrl={docsContent.srcPath}
-            currentPageUrl={docsContent.url}
-          ></in-page-navigation>
+          <div>
+            <in-page-navigation
+              pageLinks={docsContent.headings}
+              srcUrl={docsContent.srcPath}
+              currentPageUrl={docsContent.url}
+            ></in-page-navigation>
+          </div>
         ]}/>
       </div>
     );
